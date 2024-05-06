@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* white background */
+}
+.header {
+    background-color: #f39c12; /* orange-yellow color */
+    color: #ffffff; /* white text */
+    padding: 5px;
+    text-align: center;
+    display: flex;
+
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures navbar stays above other content */
+    }
+
+
+.header h1 {
+    margin-inline: 10px;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.recipe {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.recipe h2 {
+    color: #f39c12; /* orange-yellow color */
+}
+
+
+.search-bar{
+    
+    display: flex;
+    margin-inline: 10px;
+}
+
+.search{
+    display: flex;
+    height: 40px;
+    padding-top: 10%;
+    
+}
+
+.search input{
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+}
+
+.search button{
+    background: linear-gradient(to bottom right, #ffeb3b, #ffeb3b, #ffc107); /* Yellow linear gradient background */
+}
+
+.suggestions-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.suggestion {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.suggestion:hover {
+    background-color: #f9f9f9;
+}
+
+.search-input:focus + .search-icon + .suggestions-container {
+    display: block;
+}
+
+
+.Menu{
+    margin-inline: 10px;
+    display: flex;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.Menu h2{
+    margin-inline: 10px;
+}
+
+
+/* navbar */
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    /* position: sticky; */
+    /* top: 0;
+    z-index: 1000; Ensures navbar stays above other content */
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ffc16b;
+    color: black;
+}
+
+.active {
+    background-color: #ffcc00;
+    color: white;
+}
+
+.content {
+    padding: 20px;
+}
+
+
+/* carousel */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+   
+    background-color:  #ffffff;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: 70%;
+  }
+  
+
+
+  
+
+  .carousel__slides {
+    display: flex;
+    position: relative;
+  }
+  
+  .carousel__slide {
+    flex: 0 0 auto;
+    position: relative;
+  }
+  
+  .carousel__slide img {
+    width: 100%;
+    height: auto;
+  }
+  

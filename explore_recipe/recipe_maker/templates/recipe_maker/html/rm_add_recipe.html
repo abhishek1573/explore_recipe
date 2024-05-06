@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Recipes</title>
+    <link rel="stylesheet" href="../../../static/css/recipe_maker/rm_add_recipe.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="head">
+        <h1>Delicious Recipes</h1>
+        <p>Welcome to our recipe website! Explore a variety of mouth-watering recipes.</p>
+        </div>
+
+        <div class="search-bar">
+            <div class="search">
+                <input type="text" class="search-input" placeholder="Search..." size="60">
+                <i class="search-icon fas fa-search"></i>
+                <div class="suggestions-container">
+                    <div class="suggestion">Suggestion 1</div>
+                    <div class="suggestion">Suggestion 2</div>
+                    <div class="suggestion">Suggestion 3</div>
+                </div>
+                    <button type="submit">Search</button>
+            </div>
+            
+        </div>
+
+        <div class="Menu">
+            <h2>Recipe</h2>
+            <h2>Home</h2>
+            <h2>Tips & Tricks</h2>
+            <h2>Logout</h2>
+        </div>
+    </header>
+
+    <div class="navbar">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+
+
+
+<div class="carousel">
+    <img src="../../../static/images/curosal_rm.jpg" alt="Card Image">
+    <div class="card">
+      <h2>Add your Recipe Here</h2>
+<form action="{% url 'adding_recipe'%}" method="post" >
+    {% csrf_token %}
+    <div class="name">
+
+      <input type="text" placeholder="First Name" name="fname" id="fname" size="30px" height="15px">
+
+      <input type="text" placeholder="Last Name" name="lname" id="lname"size="30px" height="15px">
+    </div>
+      
+
+    <div class="recipe_detail">
+
+        <input type="text" placeholder="Recipe Name" name="rname" id="rname"size="30px" height="15px">
+
+        <textarea rows="4" cols="50" placeholder="Enter text here..."name="rdesc" id="rdesc" ></textarea>
+
+        <input type="text" placeholder="ingrediant" name="ing" id="ing" size="50px">
+        
+    </div>
+
+    <div>
+        <input type="file" name="dishimg" id="dishimg" class="inputfile" />
+        <label for="dishimg">Choose a file Of Your Dish</label>
+    </div>
+
+
+     <div class="recipe_detail">
+        <label for="instruction">Cooking Instructions</label>
+        <textarea name="instruction" value="instruction" id="instruction" rows="4" cols="50" placeholder="Enter text here..."></textarea>
+
+    </div>
+
+     <div class="name">
+
+      <input type="text" placeholder="Place" name="place" id="place" size="30px" height="15px">
+
+      <input type="text" placeholder="Email id" name="emailid" id="emailid"size="30px" height="15px">
+    </div>
+
+
+    <div class="terms">
+        <input type="checkbox" name="terms" value="terms" id="terms">
+        <label for="terms">I agree to the terms and conditions</label>
+
+        <input type="checkbox" name="terms2" value="terms2" id="terms2">
+        <label for="terms2">I agree that recipe added by me is Vegiterian 100%</label>
+    </div>
+    
+
+    <input type="submit" value="ADD">
+    
+    
+
+</form>
+    </div>
+</div>
+</body>
+</html>
