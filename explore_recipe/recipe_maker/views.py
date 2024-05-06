@@ -39,4 +39,3 @@ def rm_adding_recipe(request):
 
 
 
-

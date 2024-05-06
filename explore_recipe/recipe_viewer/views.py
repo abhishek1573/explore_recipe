@@ -13,3 +13,8 @@ def search(request):
     crse= add_recipe.objects.filter(recipe_name__icontains=query)
     return render(request, 'recipe_viewer/html/search_destination.html',{'crse':crse})
 
+def recipe_details(request, recipe_name,recipe_desc):
+    dish =add_recipe.objects.filter(recipe_name=recipe_name,recipe_desc=recipe_desc)
+    return render(request, 'recipe_viewer/html/recipie_detail.html', {'dish': dish})
+
+

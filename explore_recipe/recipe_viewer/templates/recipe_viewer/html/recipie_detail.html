@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Recipes</title>
+    <link rel="stylesheet" href="../../../static/css/recipe_viewer/recipie_detail.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="head">
+        <h1>Delicious Recipes</h1>
+        <p>Welcome to our recipe website! Explore a variety of mouth-watering recipes.</p>
+        </div>
+
+        <div class="search-bar">
+            <div class="search">
+                <input type="text" class="search-input" placeholder="Search..." size="60">
+                <i class="search-icon fas fa-search"></i>
+                <div class="suggestions-container">
+                    <div class="suggestion">Suggestion 1</div>
+                    <div class="suggestion">Suggestion 2</div>
+                    <div class="suggestion">Suggestion 3</div>
+                </div>
+                    <button type="submit">Search</button>
+            </div>
+            
+        </div>
+
+        <div class="Menu">
+            <h2>Recipe</h2>
+            <h2>Home</h2>
+            <h2>Tips & Tricks</h2>
+            <h2>Logout</h2>
+        </div>
+    </header>
+
+    <div class="navbar">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+
+
+          <div class="container2">
+            <h1>Delicious Recipe</h1>
+
+            {% for i in dish %}
+    
+            <div class="recipe-details">
+                <h2>Recipe Name  {{i.recipe_name}}</h2>
+                <p>Recipe Desc {{i.recipe_desc}}</p>
+            </div>
+    
+            <div class="ingredient-list">
+                <h3>Ingredients</h3>
+                <ul>
+                    <li>{{i.recipe_ingridient}}</li>
+                    
+                    <!-- Add more ingredients as needed -->
+                </ul>
+            </div>
+    
+            <div class="instruction-list">
+                <h3>Instructions</h3>
+                <ol>
+                    <li>{{i.recipe_instructions}}</li>
+                    
+                </ol>
+            </div>
+    
+            <a href="#" class="button">Print Recipe</a>
+              <button onclick="window.print()">Print Recipe</button>
+        </div>
+
+        {% endfor %}
+</body>
+</html>
+    
+ 
+

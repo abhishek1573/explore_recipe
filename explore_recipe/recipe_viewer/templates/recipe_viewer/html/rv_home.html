@@ -92,8 +92,9 @@
     <div class="card-container-new">
              {% for i in recipe%}
             <div class="card-new" style="--card-color: {{ card.color }};">
-                <h2>{{ i.first_name }}</h2>
-                <button type="button"  class="btn-bl" onclick=" window.open('/client_js/{{ i.form_job_title }}/{{i.form_job_skills}}', '_self')">Apply Now</button></a>
+                <h2>{{ i.recipe_name }}</h2>
+                <h2>{{ i.recipe_ingridient }}</h2>
+                <button type="button"  class="btn-bl" onclick=" window.open('/recipe_viewer/{{i.recipe_name}}/{{i.recipe_desc}}', '_self')">Prepare Now</button></a>
 
             </div>
 
