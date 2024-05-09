@@ -19,15 +19,9 @@
         <div class="search-bar">
             <div class="search">
                 <input type="text" class="search-input" placeholder="Search..." size="60" type="text" name="query" id="query">
-                <i class="search-icon fas fa-search"></i>
-                <div class="suggestions-container">
-                    <div class="suggestion">Suggestion 1</div>
-                    <div class="suggestion">Suggestion 2</div>
-                    <div class="suggestion">Suggestion 3</div>
-                </div>
                     <button type="submit">Search</button>
             </div>
-            
+
         </div>
         </form>
 
@@ -92,10 +86,12 @@
     <div class="card-container-new">
              {% for i in recipe%}
             <div class="card-new" style="--card-color: {{ card.color }};">
+
                 <h2>{{ i.recipe_name }}</h2>
                 <h2>{{ i.recipe_ingridient }}</h2>
-                <button type="button"  class="btn-bl" onclick=" window.open('/recipe_viewer/{{i.recipe_name}}/{{i.recipe_desc}}', '_self')">Prepare Now</button></a>
-
+                <div class="btn1">
+                <button type="button"  class="btn-bl" onclick=" window.open('/recipe_viewer/{{i.recipe_name}}', '_self')">Prepare Now</button></a>
+                </div>
             </div>
 
         {% endfor %}

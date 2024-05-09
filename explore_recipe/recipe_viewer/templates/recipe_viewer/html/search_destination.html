@@ -2,16 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="../../../static/css/recipe_viewer/search_destination.css">
 </head>
 <body>
-<h1>yahi to search page hai </h1>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <h1>Recipe Website</h1>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+    {% for i in crse%}
+            <div class="card-container-new">
+
+            <div class="card-new" style="--card-color: {{ card.color }};">
+                <h2>{{ i.recipe_name }}</h2>
+
+                <div class="btn1">
+                <button type="button"  class="btn-bl" onclick=" window.open('/recipe_viewer/{{i.recipe_name}}/{{i.recipe_desc}}', '_self')">Prepare Now</button></a>
+                </div>
+            </div>
+
+        {% endfor %}
 
 
-{% for i in crse%}
-<p>hi</p>
-<h2>{{ i.recipe_name }}</h2>
 
-{% endfor %}
+
+        <h2>Welcome to our Recipe Website</h2>
+        <!-- Add more content here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Recipe Website. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
+

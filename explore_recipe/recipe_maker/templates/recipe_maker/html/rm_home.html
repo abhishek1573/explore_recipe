@@ -14,19 +14,20 @@
         <p>Welcome to our recipe website! Explore a variety of mouth-watering recipes.</p>
         </div>
 
+
+        <form method="get" action="{% url 'search'%}">
         <div class="search-bar">
             <div class="search">
-                <input type="text" class="search-input" placeholder="Search..." size="60">
-                <i class="search-icon fas fa-search"></i>
-                <div class="suggestions-container">
-                    <div class="suggestion">Suggestion 1</div>
-                    <div class="suggestion">Suggestion 2</div>
-                    <div class="suggestion">Suggestion 3</div>
-                </div>
+                <input type="text" class="search-input" placeholder="Search..." size="60" type="text" name="query" id="query">
                     <button type="submit">Search</button>
             </div>
-            
+
         </div>
+        </form>
+
+
+
+
 
         <div class="Menu">
             <h2>Recipe</h2>
@@ -48,21 +49,22 @@
 
 <div class="carousel">
     <img src="../../../static/images/curosal_rm.jpg" alt="Card Image">
-    <div class="card">
+    <div class="card1">
       <h2>Add your Recipe Here</h2>
     <p>Flavour not always added in the it is in the World</p>
     <a href="{% url 'rm_add' %}">
     <button type="button">Add</button>
 </a>
-
     </div>
-    
+
+</div>
+
 
     <div class="container">
         <div class="recipe">
             <h2>PANNER CHILLI</h2>
             <p>A cheese cube tossed with the vegies.</p>
-            
+
         </div>
 
         <div class="recipe">
@@ -70,14 +72,40 @@
             <p>A classic blend of cheese cubees and chawal</p>
         </div>
 
-        <div class="recipe">
-            <h2>Smokey paneer</h2>
-            <p>Not all smokes are harmfull some are delicious</p>
-            
-        </div>
-        <!-- Add more recipe cards -->
+<!-- <div class="card-container-new">-->
+<!--        {% for i in recipe%}-->
+<!--            <div class="card2" style="&#45;&#45;card-color: {{ card.color }};">-->
+<!--                <h2>{{ i.first_name }}</h2>-->
+<!--                <p>{{ i.recipe_name }}</p>-->
+<!--              <button type="button"  class="btn-bl" onclick=" window.open('/client_js/{{ i.form_job_title }}/{{i.form_job_skills}}', '_self')">Apply Now</button></a>-->
+
+<!--            </div>-->
+
+<!--        {% endfor %}-->
+
+<!-- </div>-->
+
+  <div class="card-container-new">
+             {% for i in recipe%}
+            <div class="card-new" style="--card-color: {{ card.color }};">
+
+                <h2>{{ i.recipe_name }}</h2>
+                <h2>{{ i.recipe_ingridient }}</h2>
+                <div class="btn1">
+                <button type="button"  class="btn-bl" onclick=" window.open('/recipe_viewer/{{i.recipe_name}}', '_self')">Prepare Now</button></a>
+                </div>
+            </div>
+
+        {% endfor %}
+
     </div>
 
 </div>
 </body>
 </html>
+
+
+
+
+
+

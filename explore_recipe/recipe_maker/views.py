@@ -4,7 +4,9 @@ from . models import *
 # Create your views here.
 
 def rm_home(request):
-    return render(request, 'recipe_maker/html/rm_home.html')
+
+    recipe=add_recipe.objects.all()
+    return render(request, 'recipe_maker/html/rm_home.html',{'recipe':recipe})
 
 
 def rm_add(request):

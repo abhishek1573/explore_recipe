@@ -46,14 +46,12 @@
 
 
           <div class="container2">
+            <h1>Delicious Recipe</h1>
 
-              {% for i in dish %}
-            <h1>{{i.recipe_name}}</h1>
-
-
+            {% for i in dish %}
 
             <div class="recipe-details">
-                <h2>Recipe Name  </h2>
+                <h2>Recipe Name  {{i.recipe_name}}</h2>
                 <p>Recipe Desc {{i.recipe_desc}}</p>
             </div>
 
@@ -74,8 +72,8 @@
                 </ol>
             </div>
 
-
-              <button onclick="window.print()" class="button">Print Recipe</button>
+            <a href="#" class="button">Print Recipe</a>
+              <button onclick="window.print()">Print Recipe</button>
         </div>
 
         {% endfor %}
