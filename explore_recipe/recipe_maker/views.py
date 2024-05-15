@@ -6,6 +6,7 @@ from . models import *
 def rm_home(request):
 
     recipe=add_recipe.objects.all()
+    print(recipe)
     return render(request, 'recipe_maker/html/rm_home.html',{'recipe':recipe})
 
 
@@ -30,7 +31,10 @@ def rm_adding_recipe(request):
             print(rm_recipename,rm_lastname,rm_emailid,rm_ingridient)
             sql = add_recipe(first_name=rm_firstname, last_name=rm_lastname, recipe_name=rm_recipename,recipe_desc=rm_recipedesc,recipe_ingridient=rm_ingridient, dish_image=rm_dishphoto,recipe_instructions=rm_instruction, Location=rm_location, Email_id=rm_emailid)
             sql.save()
-            return render(request, 'recipe_maker/html/rm_home.html')
+            recipe = add_recipe.objects.all()
+            return render(request, 'recipe_maker/html/rm_home.html', {'recipe': recipe})
+
+
 
 
     else:

@@ -18,6 +18,7 @@ def searchbar(request):
 def recipe_details(request, recipe_name):
     print("ha ha aha mai chl gya")
     dish =add_recipe.objects.filter(recipe_name__icontains=recipe_name)
+    print(dish)
     return render(request, 'recipe_viewer/html/recipie_detail.html', {'dish': dish})
 
 

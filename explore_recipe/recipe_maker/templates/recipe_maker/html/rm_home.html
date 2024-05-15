@@ -90,7 +90,10 @@
             <div class="card-new" style="--card-color: {{ card.color }};">
 
                 <h2>{{ i.recipe_name }}</h2>
-                <h2>{{ i.recipe_ingridient }}</h2>
+
+<!--                 <img src="static/images/recipe_maker/{{i.dish_image}}" alt="{{ recipe.recipe_name }}">-->
+<!--                <img src="{{ i.image_field.url }}" alt="{{ recipe.recipe_name }}">-->
+<!--                <h2>{{ i.recipe_desc }}</h2>-->
                 <div class="btn1">
                 <button type="button"  class="btn-bl" onclick=" window.open('/recipe_viewer/{{i.recipe_name}}', '_self')">Prepare Now</button></a>
                 </div>

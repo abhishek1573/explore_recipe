@@ -13,7 +13,7 @@ class add_recipe(models.Model):
     recipe_name = models.CharField(null=True, blank=True, max_length=40)
     recipe_desc = models.CharField(null=True, blank=True, max_length=400)
     recipe_ingridient = models.CharField(null=True, blank=True, max_length=400)
-    dish_image = models.ImageField(upload_to='static/profile_images/',null=True, blank=True,)
+    dish_image = models.ImageField(upload_to='recipe_maker/images/',null=True, blank=True,)
     recipe_instructions = models.CharField(null=True, blank=True, max_length=4000)
     Location = models.CharField(null=True, blank=True,max_length=50)
     Email_id = models.CharField(null=True, blank=True,max_length=50)
